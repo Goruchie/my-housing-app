@@ -4,9 +4,8 @@
         <button class="primary" type="button">Search</button>
     </form>
     <section class="results">
-        <app-housing-location 
-        *ngFor="let housingLocation of housingLocationList"
-        [housingLocation]="housingLocation" 
-        />
+        @for (housingLocation of housingLocationList; track housingLocation.id) {
+            <app-housing-location [housingLocation]="housingLocation" />
+        }
     </section>
 </section>
